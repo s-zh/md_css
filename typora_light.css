@@ -1,0 +1,53 @@
+#write{
+    max-width: 60em;
+    margin:0 auto;
+    padding: 20px 30px 50px;
+    font-size: 15px; /* 更改默认字体大小 */
+    color: #3e3e3e;
+    line-height: 1.8; /* 更改默认的行距 */
+    word-spacing: 2px; /* 更改默认的词间距 */
+    letter-spacing: 2px; /* 更改默认的字符间距 */
+    font-family: "Helvetica Neue",Helvetica,"Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
+
+    /* 增加背景网格 */
+    background-image: linear-gradient(90deg,rgba(50,0,0,0.05) 3%,rgba(0,0,0,0) 3%), linear-gradient(360deg,rgba(50,0,0,0.05) 3%, rgba(0,0,0,0) 3%);
+    background-size: 20px 20px;
+    background-position: center center;
+    border: 5px solid #dee7de;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+h1 {
+    line-height: 2em;
+    text-align: center;
+    border-bottom: 1px solid #eeeeee;
+    color: #446688;
+}
+h1:before{
+    content: "『 "
+}
+h1:after{
+    content: " 』"
+}
+
+h2 {
+    border-bottom:2px solid rgb(239,112,96);
+}
+h2 span{
+    display: inline-block;
+    font-weight: normal;
+    background: rgb(239,112,96);
+    color:#ffffff;
+    padding:3px 10px 1px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    margin-right: 3px;
+}
+h2:after{
+    display: inline-block;
+    content:" ";
+    vertical-align:bottom;
+    border-bottom: 36px solid #efebe9;
+    border-right: 20px solid transparent;
+}
