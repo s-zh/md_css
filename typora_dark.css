@@ -1,16 +1,24 @@
+/* 暗色背景 */
+body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background: #363B40;
+    fill: currentColor;
+}
+
 #write{
     max-width: 60em;
     margin:0 auto;
     padding: 20px 30px 50px;
     font-size: 15px; /* 更改默认字体大小 */
-    color: #3e3e3e;
+    color: #dee7de;
     line-height: 1.8; /* 更改默认的行距 */
     word-spacing: 2px; /* 更改默认的词间距 */
     letter-spacing: 2px; /* 更改默认的字符间距 */
     font-family: "Helvetica Neue",Helvetica,"Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
 
     /* 增加背景网格 */
-    background-image: linear-gradient(90deg,rgba(50,0,0,0.05) 3%,rgba(0,0,0,0) 3%), linear-gradient(360deg,rgba(50,0,0,0.05) 3%, rgba(0,0,0,0) 3%);
+    background-image: linear-gradient(90deg,rgba(230, 218, 218, 0.05) 3%,rgba(0,0,0,0) 3%), linear-gradient(360deg,rgba(148, 133, 133, 0.05) 3%, rgba(0,0,0,0) 3%);
     background-size: 20px 20px;
     background-position: center center;
     border: 5px solid #dee7de;
@@ -75,7 +83,7 @@ a{
 img{
     display: block;
     border-radius: 6px;
-    box-shadow: 0 0 10px #2c3e50;
+    box-shadow: 0 0 10px #737e89;
     margin: 20px auto; /* 图片水平居中 */
     max-width: 90%;
 }
@@ -88,7 +96,7 @@ table{
 }
 table th {
     font-weight: bold;
-    border: 1px solid #2b2b2b;
+    border: 1px solid #ccc;
     border-bottom: 0;
     margin: 0;
     padding: 6px 13px;
@@ -96,12 +104,12 @@ table th {
 }
 table tr{
     border: 0;
-    border-top: 1px solid #2b2b2b;
-    background-color: #f4f4f4;
-    border-bottom: 2px solid #2b2b2b;
+    border-top: 1px solid #ccc;
+    background-color: #2b2b2b;
+    border-bottom: 2px solid #ccc;
 }
 table td {
-    border: 1px solid #2b2b2b;
+    border: 1px solid #ccc;
     margin: 0;
     padding: 6px 13px;
 }
@@ -133,13 +141,13 @@ table td {
   font-family: Consolas, Monaco, Menlo, monospace;
   word-break: break-all;
 }
-/* mac风格代码块窗口-light */
+/* mac风格代码块窗口-dark */
 #write pre.md-fences {
     /* 渲染窗口栏 */
 	padding: 1rem 0.5rem 1rem;
 	display: block;
 	-webkit-overflow-scrolling: touch;
-    border-top: #f4f4f4 solid 35px;
+    border-top: #323233 solid 35px;
     background-color: #2b2b2b;
 }
 .md-fences::before {
@@ -164,7 +172,7 @@ table td {
     color: #A9B7C6;
     font-family: Consolas, Monaco, Menlo, monospace;
     font-weight: bold;
-    box-shadow: 0 0 10px #2c3e50;
+    box-shadow: 0 0 10px #737e89;
 }
 /**
     IDEA代码配色渲染
