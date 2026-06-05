@@ -2,11 +2,11 @@
     max-width: 90em;
     margin:0 auto;
     padding: 20px 30px 50px;
-    font-size: 15px; /* 更改默认字体大小 */
+    font-size: 16px;
     color: #000000;
-    line-height: 1.8; /* 更改默认的行距 */
-    word-spacing: 2px; /* 更改默认的词间距 */
-    letter-spacing: 2px; /* 更改默认的字符间距 */
+    line-height: 1.75;
+    word-spacing: normal;
+    letter-spacing: 0.5px;
     font-family: "PingFang SC","Helvetica Neue",Helvetica,"Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
 
     /* 增加背景网格 */
@@ -15,20 +15,62 @@
     background-position: center center;
     border: 5px solid #dee7de;
     border-radius: 5px;
-    padding: 15px;
+}
+
+/* YAML 文档头 */
+#write pre.md-meta-block {
+    color: #555;
+    background: none !important;
+    background-color: transparent !important;
+    padding: 0.5em 0;
+    border-bottom: 1px dashed #e0d8d0;
+    line-height: 1.6;
+    margin: 0 0 1.2em;
+}
+
+#write pre.md-meta-block .md-tag {
+    color: rgb(239, 112, 96);
+    font-weight: 600;
+}
+
+#write pre.md-meta-block .md-value {
+    color: #0366d6;
+}
+
+.md-meta {
+    color: #555;
+}
+
+#write p {
+    margin: 0 0 1.2em;
+}
+
+#write ul, #write ol {
+    margin: 0.6em 0;
+}
+
+#write li {
+    margin: 0.2em 0;
+    line-height: 1.6;
+}
+
+#write li p {
+    margin: 0.2em 0;
 }
 
 h1 {
     line-height: 2em;
     text-align: center;
-    border-bottom: 1px solid #eeeeee;
+    border-bottom: 1px solid #d0d0d0;
     color: #446688;
 }
 h1:before{
-    content: "『 "
+    content: "『 ";
+    color: rgb(239,112,96);
 }
 h1:after{
-    content: " 』"
+    content: " 』";
+    color: rgb(239,112,96);
 }
 
 h2 {
@@ -53,13 +95,54 @@ h2:after{
 }
 
 h3{
-    margin-left: 5px;
+    margin: 1.6em 0 0.3em 5px;
     letter-spacing: 2px;
 }
 h3:before{
     content: "➤";
     color: #0366d6;
     line-height: 100%;
+}
+
+h4, h5, h6 {
+    margin: 1.4em 0 0.3em 5px;
+}
+
+h4:before {
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    background: rgb(239,112,96);
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+h5:before {
+    content: "•";
+    color: #0366d6;
+    font-size: 1.4em;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+h6:before {
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    background: rgb(239, 180, 165);
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* 分割线 */
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, transparent, rgb(239,112,96), transparent);
+    margin: 2em auto;
+    width: 80%;
 }
 
 /* 超链接 */
@@ -69,6 +152,13 @@ a{
     color: #1e6bc8;
     font-weight: 600;
     margin: 2px;
+}
+
+/* 高亮（荧光马克笔效果） */
+mark {
+    background: rgba(255, 230, 80, 0.45);
+    padding: 0 2px;
+    border-radius: 2px;
 }
 
 /* 图片 */
@@ -85,25 +175,33 @@ table{
     display: table;
     width: 100%;
     text-align: left;
+    border-collapse: collapse;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
 }
+
 table th {
-    font-weight: bold;
-    border: 1px solid #2b2b2b;
-    border-bottom: 0;
+    font-weight: 600;
+    border: 0;
     margin: 0;
-    padding: 6px 13px;
+    padding: 10px 14px;
     text-align: center;
+    color: #ffffff;
+    background: rgb(244, 155, 140);
 }
+
 table tr{
     border: 0;
-    border-top: 1px solid #2b2b2b;
-    background-color: #f4f4f4;
-    border-bottom: 2px solid #2b2b2b;
+    background-color: #ffffff;
 }
+
 table td {
-    border: 1px solid #2b2b2b;
+    border: 0;
     margin: 0;
-    padding: 6px 13px;
+    padding: 10px 14px;
+    border-bottom: 1px solid #f0e8e4;
+    font-size: 0.9em;
 }
 
 /*引用*/
@@ -128,28 +226,28 @@ table td {
   padding: 2px 4px;
   border-radius: 4px;
   margin: 0 2px;
-  color:  rgb(239, 112, 96);;
+  color:  rgb(239, 112, 96);
   background-color: rgba(27,31,35,.05);
   font-family: Consolas, Monaco, Menlo, monospace;
   word-break: break-all;
 }
 /* mac风格代码块窗口-light */
 #write pre.md-fences {
-    /* 渲染窗口栏 */
-	padding: 1rem 0.5rem 1rem;
+    position: relative;
+	padding: 0.8rem 0.5rem 1rem;
 	display: block;
 	-webkit-overflow-scrolling: touch;
-    border-top: #f4f4f4 solid 35px;
+    border-top: #3c3c3c solid 30px;
     background-color: #2b2b2b;
 }
 .md-fences::before {
     /* 渲染mac窗口三点 */
 	content: ' ';
 	background: #E0443E;
-	box-shadow: 23px 0 #DEA123, 45px 0 #1AAB29;
+	box-shadow: 22px 0 #DEA123, 44px 0 #1AAB29;
 	border-radius: 50%;
-	margin-top: -2.3rem;
 	position: absolute;
+	top: -21px;
 	left: 15px;
 	height: 12px;
 	width: 12px;
@@ -163,7 +261,6 @@ table td {
     background-color: #2b2b2b;
     color: #A9B7C6;
     font-family: Consolas, Monaco, Menlo, monospace;
-    font-weight: bold;
     box-shadow: 0 0 10px #2c3e50;
 }
 /**
@@ -277,4 +374,45 @@ table td {
 }
 .cm-s-inner div.CodeMirror-cursor {
     border-left: 1px solid #A9B7C6;
+}
+
+/* Mermaid 默认渲染态：白色干净样式 */
+.md-fences[lang="mermaid"] {
+    border-top: none !important;
+    background: #ffffff !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+}
+
+.md-fences[lang="mermaid"]::before {
+    content: none !important;
+}
+
+.md-fences[lang="mermaid"] .mermaid {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 1.5em;
+    margin: 0;
+    text-align: center;
+}
+
+/* Mermaid 编辑态：macOS 暗色代码块 */
+.md-fences[lang="mermaid"]:focus-within {
+    padding: 0.8rem 0.5rem 1rem !important;
+    border-top: #3c3c3c solid 30px !important;
+    background: #2b2b2b !important;
+    box-shadow: 0 0 10px #2c3e50 !important;
+}
+
+.md-fences[lang="mermaid"]:focus-within::before {
+    content: ' ' !important;
+    background: #E0443E;
+    box-shadow: 22px 0 #DEA123, 44px 0 #1AAB29;
+    border-radius: 50%;
+    position: absolute;
+    top: -21px;
+    left: 15px;
+    height: 12px;
+    width: 12px;
 }
