@@ -416,3 +416,10 @@ table td {
     height: 12px;
     width: 12px;
 }
+
+/* 打印/PDF导出时网格调淡 */
+@media print {
+    #write {
+        background-image: linear-gradient(90deg,rgba(50,0,0,0.02) 3%,rgba(0,0,0,0) 3%), linear-gradient(360deg,rgba(50,0,0,0.02) 3%, rgba(0,0,0,0) 3%) !important;
+    }
+}
